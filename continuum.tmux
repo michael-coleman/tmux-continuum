@@ -36,7 +36,13 @@ add_resurrect_save_interpolation() {
 	local status_right_value="$(get_tmux_option "status-right" "")"
 	# check interpolation not already added
 	if ! [[ "$status_right_value" == *"$save_command_interpolation"* ]]; then
-		local new_value="${save_command_interpolation}${status_right_value}"
+		
+		# original
+		# local new_value="${save_command_interpolation}${status_right_value}"
+		
+		local new_value="#[fg=colour238,bg=colour235,nobold,nounderscore,noitalics]#[fg=colour252,bg=colour238]${save_command_interpolation} . #[fg=colour252,bg=colour238,nobold,nounderscore,noitalics]#[fg=colour232,bg=colour252] #h "
+		#local new_value="#[fg=green]#S"
+		
 		set_tmux_option "status-right" "$new_value"
 	fi
 }
