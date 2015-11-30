@@ -61,13 +61,13 @@ main() {
 	
 	# if user has enabled @continuum-delete-old-saves-option 'on' then delete old
 	# save files
-	if [ -n $(get_tmux_option "$delete_old_saves_option" "") ]
+	if [[ -n $(get_tmux_option "$delete_old_saves_option" "") ]]
 	then
 		delete_old_saves
 	fi
 	
 	# if user has enabled show status option then insert into statusline
-	if [ -n $(get_tmux_option "$show_continuum_status_option" "") ]
+	if [[ -n $(get_tmux_option "$show_continuum_status_option" "") ]]
 	then
 		output_current_continuum_status
 	fi
