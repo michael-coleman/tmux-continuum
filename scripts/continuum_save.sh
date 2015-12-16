@@ -46,7 +46,6 @@ output_current_continuum_status() {
 	else
 		status="#[fg=red]error#[fg=white]"
 	fi
-	local temp="#[fg=green,bold]"${save_int}"#[fg=white,nobold]"
 	echo " "${status}" "
 }
 
