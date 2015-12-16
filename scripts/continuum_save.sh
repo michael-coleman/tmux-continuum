@@ -56,7 +56,7 @@ main() {
 	fi
 	
 	# if user has enabled show status option then insert into statusline
-	if [ -n $(get_tmux_option "$show_continuum_status_option" "") ]
+	if [[ -n $(get_tmux_option "$show_continuum_status_option" "") ]]
 	then
 		output_current_continuum_status
 	fi
